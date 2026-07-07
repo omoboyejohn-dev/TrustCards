@@ -33,8 +33,40 @@ Submit your gift card details and we will process your exchange.
 </p>
 
 
-
 <form id="exchangeForm">
+
+
+<label>
+Select Country
+</label>
+
+<br>
+
+<select id="country" required>
+
+<option value="">
+Choose Country
+</option>
+
+<option>🇺🇸 USA</option>
+<option>🇬🇧 UK</option>
+<option>🇨🇦 Canada</option>
+<option>🇵🇱 Poland</option>
+<option>🇩🇪 Germany</option>
+<option>🇧🇷 Brazil</option>
+<option>🇲🇽 Mexico</option>
+<option>🇦🇺 Australia</option>
+<option>🇪🇸 Spain</option>
+<option>🇫🇷 France</option>
+<option>🇵🇹 Portugal</option>
+<option>🇮🇹 Italy</option>
+<option>🇬🇷 Greece</option>
+<option>🇸🇦 Saudi Arabia</option>
+
+</select>
+
+
+<br><br>
 
 
 <label>
@@ -49,28 +81,55 @@ Select Gift Card
 Choose Card
 </option>
 
-<option value="Apple">
-Apple Gift Card
+<option>Apple Gift Card</option>
+<option>Amazon Gift Card</option>
+<option>Steam Gift Card</option>
+<option>Google Play Gift Card</option>
+<option>Razer Gold Gift Card</option>
+<option>Visa Gift Card</option>
+<option>Mastercard Gift Card</option>
+<option>American Express Gift Card</option>
+<option>Sephora Gift Card</option>
+<option>Nike Gift Card</option>
+<option>eBay Gift Card</option>
+<option>Walmart Gift Card</option>
+<option>Target Gift Card</option>
+<option>Xbox Gift Card</option>
+<option>PlayStation Gift Card</option>
+<option>iTunes Gift Card</option>
+<option>Vanilla Gift Card</option>
+<option>Nordstrom Gift Card</option>
+<option>Macy’s Gift Card</option>
+<option>Roblox Gift Card</option>
+<option>Best Buy Gift Card</option>
+<option>Airbnb Gift Card</option>
+<option>Spotify Gift Card</option>
+<option>Uber Gift Card</option>
+
+</select>
+
+
+<br><br>
+
+
+<label>
+Currency
+</label>
+
+<br>
+
+<select id="currency" required>
+
+<option value="">
+Choose Currency
 </option>
 
-<option value="Amazon">
-Amazon Gift Card
+<option value="USD">
+🇺🇸 USD ($)
 </option>
 
-<option value="Steam">
-Steam Gift Card
-</option>
-
-<option value="Google Play">
-Google Play Gift Card
-</option>
-
-<option value="Razer Gold">
-Razer Gold
-</option>
-
-<option value="Visa">
-Visa Gift Card
+<option value="NGN">
+🇳🇬 Naira (₦)
 </option>
 
 </select>
@@ -89,6 +148,38 @@ Card Amount
 type="number"
 id="amount"
 placeholder="Enter amount"
+required>
+
+
+<br><br>
+
+
+<label>
+Upload Front Image
+</label>
+
+<br>
+
+<input
+type="file"
+id="frontImage"
+accept="image/*"
+required>
+
+
+<br><br>
+
+
+<label>
+Upload Back Image
+</label>
+
+<br>
+
+<input
+type="file"
+id="backImage"
+accept="image/*"
 required>
 
 
