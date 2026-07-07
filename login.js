@@ -6,27 +6,32 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 
-// Get login form
+console.log("Login JS connected ✅");
+
+
 const loginForm = document.getElementById("loginForm");
 
 
 if (loginForm) {
 
+    console.log("Login form found ✅");
+
 
     loginForm.addEventListener("submit", async (e) => {
-
 
         e.preventDefault();
 
 
-        const email = document.getElementById("email").value;
+        console.log("Login button clicked");
+
+
+        const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value;
 
 
         try {
 
 
-            // Login user
             await signInWithEmailAndPassword(
                 auth,
                 email,
@@ -37,20 +42,24 @@ if (loginForm) {
             alert("Login successful ✅");
 
 
-            // Send to dashboard
             window.location.href = "dashboard.html";
 
 
         } catch (error) {
 
 
+            console.log(error);
+
             alert(error.message);
 
 
         }
 
-
     });
 
+
+} else {
+
+    console.log("Login form not found ❌");
 
 }
