@@ -66,9 +66,11 @@ onAuthStateChanged(auth, (user) => {
 
                 let currencySymbol = "";
 
+
                 if(order.currency === "USD"){
                     currencySymbol = "$";
                 }
+
 
                 if(order.currency === "NGN"){
                     currencySymbol = "₦";
@@ -76,15 +78,19 @@ onAuthStateChanged(auth, (user) => {
 
 
 
+                const status = order.status || "Pending";
+
+
+
                 let statusClass = "pending";
 
 
-                if(order.status === "Approved"){
+                if(status === "Approved"){
                     statusClass = "approved";
                 }
 
 
-                if(order.status === "Rejected"){
+                if(status === "Rejected"){
                     statusClass = "rejected";
                 }
 
@@ -117,7 +123,7 @@ onAuthStateChanged(auth, (user) => {
 
 
                     <p class="${statusClass}">
-                    Status: ${order.status}
+                    🟡 Status: ${status}
                     </p>
 
 
