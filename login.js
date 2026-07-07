@@ -1,4 +1,3 @@
-// Firebase connection
 import { auth } from "./firebase.js";
 
 import {
@@ -6,60 +5,47 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 
-console.log("Login JS connected ✅");
+console.log("login.js loaded ✅");
 
 
 const loginForm = document.getElementById("loginForm");
 
 
-if (loginForm) {
+loginForm.addEventListener("submit", async (e) => {
 
-    console.log("Login form found ✅");
+    e.preventDefault();
 
-
-    loginForm.addEventListener("submit", async (e) => {
-
-        e.preventDefault();
+    console.log("Login button pressed ✅");
 
 
-        console.log("Login button clicked");
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
+    try {
+
+        const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
 
 
-        try {
+        console.log("User logged in:", userCredential.user.email);
 
 
-            await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
+        alert("Login successful ✅");
 
 
-            alert("Login successful ✅");
+        window.location.href = "dashboard.html";
 
 
-            window.location.href = "dashboard.html";
+    } catch (error) {
 
+        console.error("Login error:", error);
 
-        } catch (error) {
+        alert(error.message);
 
+    }
 
-            console.log(error);
-
-            alert(error.message);
-
-
-        }
-
-    });
-
-
-} else {
-
-    console.log("Login form not found ❌");
-
-}
+});
