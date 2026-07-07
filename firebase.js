@@ -11,6 +11,11 @@ import {
     getFirestore 
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
+// Firebase Storage
+import {
+    getStorage
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-storage.js";
+
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -31,7 +36,8 @@ const app = initializeApp(firebaseConfig);
 // Initialize services
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 
 // Export so other files can use them
-export { auth, db };
+export { auth, db, storage };
